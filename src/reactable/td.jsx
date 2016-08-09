@@ -37,7 +37,7 @@ export class Td extends React.Component {
         } else if (this.props.customRender[this.props.column.key]) {
           return (
             <td {...mergedProps}>
-              {this.props.customRender[this.props.column.key](this.props.children)}
+              {this.props.customRender[this.props.column.key](this.props.children, this.props.rowData)}
             </td>
           );
         } else {

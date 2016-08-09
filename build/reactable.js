@@ -21,10 +21,23 @@ window.ReactDOM["default"] = window.ReactDOM;
         columns: true,
         sortable: true,
         filterable: true,
+        filtering: true,
+        onFilter: true,
+        filterPlaceholder: true,
         filterClassName: true,
+        currentFilter: true,
+        sort: true,
         sortBy: true,
+        sortableColumns: true,
+        onSort: true,
         defaultSort: true,
+        defaultSortDescending: true,
         itemsPerPage: true,
+        filterBy: true,
+        hideFilterInput: true,
+        noDataText: true,
+        currentPage: true,
+        pageButtonLimit: true,
         childNode: true,
         data: true,
         children: true
@@ -462,7 +475,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                     return _react['default'].createElement(
                         'td',
                         mergedProps,
-                        this.props.customRender[this.props.column.key](this.props.children)
+                        this.props.customRender[this.props.column.key](this.props.children, this.props.rowData)
                     );
                 } else {
                     return _react['default'].createElement(
@@ -540,7 +553,8 @@ window.ReactDOM["default"] = window.ReactDOM;
                                 _extends({
                                     customRender: this.props.customRender,
                                     column: column,
-                                    key: column.key
+                                    key: column.key,
+                                    rowData: this.props.data
                                 }, props),
                                 value
                             );

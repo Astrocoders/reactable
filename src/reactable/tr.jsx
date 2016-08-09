@@ -33,6 +33,7 @@ export class Tr extends React.Component {
                         customRender={this.props.customRender}
                         column={column}
                         key={column.key}
+                        rowData={this.props.data}
                         {...props}
                       >
                         {value}
